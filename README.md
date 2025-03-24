@@ -9,6 +9,8 @@ Dr. Nadejda Drenska ndrenska@lsu.edu
 ## Graduate Team Managers:
 Christian Ennis, Shalini Shalini
 
+## Undergraduate Students
+Carmen Neill, Dominique R Piccolo, Emma K Conner, Lauren Bankston, Sydney Lawson, Dow Draper.
 ## AGGRC
 Director Terrance Tiersch
 
