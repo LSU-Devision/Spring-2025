@@ -343,13 +343,13 @@ if __name__ == '__main__':
             print(e)
            
     #images_dir needs a subdirectory named images and one named csv
-    image_dir = "data"
+    image_dir = "Frog_Embryo_v2/second-train/second-train"
     
     #model dir where model is stored or being written to
-    model_dir = "test"
+    model_dir = "Model_v2"
     
-    epochs = 1
-    batch_size = 4
+    epochs = 10
+    batch_size = 16
     validation_percentage = 20
     image_format = 'YXC'
     mask_format = 'YXC'
@@ -357,7 +357,7 @@ if __name__ == '__main__':
     
     # Makes a new model, turn off once one is created
     # This consumes a lot of memory, be careful
-    overwrite = False
+    overwrite = True
     
     
     classes = 4
