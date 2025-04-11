@@ -190,17 +190,24 @@ class Loader:
         self.images = {}
         self.labels = {}
         self.class_mappings = {}
+        self.fails = set()
         
         for index in range(*self.image_len):
+            if index in self.fails:
+                continue
+            
             name = self.image_paths[index].stem
             path = self.image_paths[index]
             
-            with Image.open(path) as img:
-                img_rgb = img.convert('RGB')
-                img_rgb = np.array(img_rgb)
-                img_rgb = normalize(img_rgb, 1, 99.8)
-                self.images[name] = img_rgb
-                self._load_label(name, img.size)
+            try: 
+                with Image.open(path) as img:
+                    img_rgb = img.convert('RGB')
+                    img_rgb = np.array(img_rgb)
+                    img_rgb = normalize(img_rgb, 1, 99.8)
+                    self.images[name] = img_rgb
+                    self._load_label(name, img.size)
+            except:
+                self.fails.add(index)
             
     def _load_label(self, name, size):
        pass
