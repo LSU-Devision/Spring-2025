@@ -295,14 +295,16 @@ class VGGLoader(Loader):
         class_mapper_iter = {}
         
         def add_label(row):
-            class_mapper_iter
             
             shape = json.loads(row['region_shape_attributes'])
             classes = json.loads(row['region_attributes'])
             object_id = row['region_id'] + 1
             
-            class_int = int(classes['class_name']) + 1
-            
+            try:
+                class_int = int(classes['class_name']) + 1
+            except:
+                print(f"{path} has incorrect class information")
+                exit()
             class_mapper_iter[object_id] = class_int
             
             if shape['name'] == 'circle':
