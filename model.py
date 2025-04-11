@@ -348,7 +348,7 @@ if __name__ == '__main__':
             print(e)
            
     #images_dir needs a subdirectory named images and one named csv
-    image_dir = "Frog_Embryo_v2/second-train/second-train"
+    image_dir = "data"
     
     #model dir where model is stored or being written to
     model_dir = "Model_v2"
