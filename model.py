@@ -275,7 +275,7 @@ if __name__ == '__main__':
     }
     
     api = StarDistAPI(
-        data_dir='Spring-2025/Frog_Embryo_v2/second-train/second-train',
+        data_dir='Frog_Embryo_v2/second-train/second-train',
         model_dir='xenopus-4-class',
         epochs=2,
         image_format='YXC',
