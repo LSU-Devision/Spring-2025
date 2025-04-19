@@ -227,7 +227,7 @@ class StarDistAPI:
         else:
             class_labels = [self.instances_to_class_map(lbl, detail['class_id']) for lbl, detail in predictions]
         
-        val_maps = [(maps[k] for k in maps) for maps in val_maps]
+        val_maps = [np.array(list(maps.values())) for maps in val_maps]
         val_class_y = [self.instances_to_class_map(lbl, maps) for lbl, maps in zip(val_y, val_maps)]   
         
         dist_stats = [matching_dataset(val_y, labels, thresh=t, show_progress=False) for t in tqdm(self.taus)]
@@ -299,7 +299,7 @@ if __name__ == '__main__':
     api = StarDistAPI(
         data_dir='Frog_Embryo_v2/second-train/second-train',
         model_dir='xenopus-4-class',
-        epochs=10,
+        epochs=1,
         image_format='YXC',
         mask_format='YXC',
         overwrite=True,
